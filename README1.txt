@@ -4,19 +4,19 @@
 A WPF proof-of-concept app that lets HR stakeholders filter, chart, simulate and export employee compensation.
 
 ## Tech Stack  
-- **DB:** SQL Server  
-- **Backend:** C#/.NET 6, ADO.NET  
-- **Frontend:** WPF, LiveCharts.Wpf  
-- **CSV Export:** CsvHelper  
+- DB: SQL Server  
+- Backend: C#/.NET 6, ADO.NET  
+- Frontend: WPF, LiveCharts.Wpf  
+- CSV Export: CsvHelper  
 
 ## Setup
 
-1. **Database**  
+1. Database  
    - Run `/Database/schema.sql`  
    - Run `/Database/stored_procs.sql`  
    - Bulk-load `EmployeeData.xlsx` into `employees`, `locations`, `roles`, etc.
 
-2. **App**  
+2. App  
    - Open `CompForecast.sln` in Visual Studio  
    - Update connection string in `MainWindow.xaml.cs`  
    - Restore NuGet packages (LiveCharts, CsvHelper)  
@@ -24,19 +24,20 @@ A WPF proof-of-concept app that lets HR stakeholders filter, chart, simulate and
 
 ## User Stories Fulfilled  
 
-1. **Filter & Display**  
+1. Filter & Display  
    - `sp_FilterEmployees` → DataGrid; combo-boxes + checkbox  
 
-2. **Avg Compensation by Location**  
+2. Avg Compensation by Location  
    - `sp_CalcAverageCompensation` → bar chart  
 
-3. **Experience Buckets**  
+3. Experience Buckets  
    - `sp_GetExperienceDistribution` → second bar chart  
 
-4. **Simulate % Increment**  
+4. Simulate % Increment  
    - Client-side multiply + display both values  
 
-5. **CSV Export**  
+5. CSV Export  
    - `sp_ExportFilteredEmployees` → CsvHelper → `.csv`  
 
 ---
+
